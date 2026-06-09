@@ -7,35 +7,42 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F5F5F0;color:#1a1a18;font-size:14px}
-.topbar{background:#fff;border-bottom:1px solid #e8e8e4;padding:0 20px;display:flex;align-items:center;gap:0;position:sticky;top:0;z-index:100}
-.topbar-brand{font-size:14px;font-weight:600;color:#1a1a18;padding:14px 0;margin-right:28px;display:flex;align-items:center;gap:8px}
+html,body{background:#F5F5F0!important;color:#1a1a18!important;color-scheme:light only}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;min-height:100vh}
+.topbar{background:#fff;border-bottom:1px solid #e8e8e4;padding:0 20px;display:flex;align-items:center;position:sticky;top:0;z-index:100}
+.topbar-brand{font-size:14px;font-weight:700;color:#1a1a18;padding:14px 0;margin-right:28px;display:flex;align-items:center;gap:8px}
 .topbar-brand span{color:#1D9E75}
-.nav-tab{font-size:13px;color:#6b6b67;padding:14px 14px;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:color .15s}
+.nav-tab{font-size:13px;color:#6b6b67;padding:14px 14px;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:color .15s;user-select:none}
 .nav-tab:hover{color:#1a1a18}
-.nav-tab.active{color:#1a1a18;border-bottom-color:#1D9E75;font-weight:500}
-.content{padding:20px;max-width:1200px;margin:0 auto}
-.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.section-title{font-size:15px;font-weight:600;color:#1a1a18}
-.btn{font-size:13px;padding:7px 14px;border:1px solid #d4d4ce;border-radius:8px;background:#fff;color:#1a1a18;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.nav-tab.active{color:#1a1a18;border-bottom-color:#1D9E75;font-weight:600}
+.content{padding:20px;max-width:1280px;margin:0 auto}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.section-title{font-size:15px;font-weight:700;color:#1a1a18}
+.btn{font-size:13px;padding:7px 14px;border:1px solid #d4d4ce;border-radius:8px;background:#fff;color:#1a1a18;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-family:inherit}
 .btn:hover{background:#f5f5f0}
 .btn-primary{background:#1D9E75;color:#fff;border-color:#1D9E75}
 .btn-primary:hover{background:#0F6E56}
-.btn-sm{font-size:12px;padding:4px 10px}
+.btn-danger{background:#E24B4A;color:#fff;border-color:#E24B4A}
+.btn-danger:hover{background:#b53837}
+.btn-sm{font-size:12px;padding:4px 9px}
+.btn-icon{padding:5px 8px}
 .card{background:#fff;border:1px solid #e8e8e4;border-radius:12px;padding:16px}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.field{display:flex;flex-direction:column;gap:4px;margin-bottom:12px}
-.field label{font-size:11px;color:#6b6b67;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-.field input,.field select,.field textarea{font-size:13px;padding:8px 10px;border:1px solid #d4d4ce;border-radius:8px;background:#fff;color:#1a1a18;width:100%}
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.field label{font-size:11px;color:#6b6b67;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.field input,.field select,.field textarea{font-size:13px;padding:8px 10px;border:1px solid #d4d4ce;border-radius:8px;background:#fff;color:#1a1a18;width:100%;font-family:inherit}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:#1D9E75;box-shadow:0 0 0 3px rgba(29,158,117,0.1)}
 .field select{cursor:pointer}
 .field textarea{resize:vertical;min-height:72px}
-.metric-card{background:#f9f9f6;border:1px solid #e8e8e4;border-radius:8px;padding:14px 16px}
-.metric-label{font-size:11px;color:#6b6b67;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
-.metric-value{font-size:26px;font-weight:600;color:#1a1a18}
-.metric-sub{font-size:12px;color:#6b6b67;margin-top:2px}
-.badge{display:inline-flex;align-items:center;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600}
+.metric-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:4px}
+.metric-label{font-size:11px;color:#6b6b67;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.metric-value{font-size:28px;font-weight:700;color:#1a1a18;line-height:1}
+.metric-sub{font-size:11px;color:#6b6b67}
+.metric-trend{font-size:11px;font-weight:600}
+.badge{display:inline-flex;align-items:center;font-size:11px;padding:2px 8px;border-radius:10px;font-weight:700;white-space:nowrap}
 .badge-nc{background:#FCEBEB;color:#A32D2D}
 .badge-critical{background:#FAECE7;color:#993C1D}
 .badge-major{background:#FAEEDA;color:#854F0B}
@@ -52,50 +59,79 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .badge-latam{background:#FAEEDA;color:#854F0B}
 .badge-afr{background:#FAECE7;color:#993C1D}
 table{width:100%;border-collapse:collapse;font-size:13px}
-th{font-size:11px;font-weight:600;color:#6b6b67;text-align:left;padding:8px 12px;border-bottom:1px solid #e8e8e4;white-space:nowrap;text-transform:uppercase;letter-spacing:.04em}
+th{font-size:11px;font-weight:700;color:#6b6b67;text-align:left;padding:9px 12px;border-bottom:1px solid #e8e8e4;white-space:nowrap;text-transform:uppercase;letter-spacing:.04em;background:#fafaf8}
 td{padding:9px 12px;border-bottom:1px solid #f0f0ec;color:#1a1a18;vertical-align:middle}
 tr:hover td{background:#fafaf8}
 .filter-bar{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center}
 .filter-bar select,.filter-bar input{font-size:12px;padding:6px 10px;border:1px solid #d4d4ce;border-radius:8px;background:#fff;color:#1a1a18}
-.filter-bar input{width:220px}
+.filter-bar input{width:200px}
 .findings-block{border:1px solid #e8e8e4;border-radius:8px;margin-bottom:8px;overflow:hidden}
-.finding-header{display:flex;align-items:center;gap:8px;padding:9px 12px;background:#f9f9f6;font-size:13px;font-weight:500;justify-content:space-between}
+.finding-header{display:flex;align-items:center;gap:8px;padding:9px 12px;background:#fafaf8;font-size:13px;font-weight:600;justify-content:space-between}
 .finding-body{padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .divider{height:1px;background:#e8e8e4;margin:16px 0}
-.form-section-title{font-size:11px;font-weight:600;color:#6b6b67;text-transform:uppercase;letter-spacing:.05em;margin:16px 0 12px;padding-bottom:6px;border-bottom:1px solid #e8e8e4}
-.finding-add-btn{width:100%;padding:9px;border:1px dashed #d4d4ce;border-radius:8px;background:transparent;color:#6b6b67;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px}
-.finding-add-btn:hover{background:#f5f5f0}
-.settings-list{background:#f9f9f6;border:1px solid #e8e8e4;border-radius:8px;padding:14px}
-.settings-list h3{font-size:11px;font-weight:600;color:#6b6b67;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
+.form-section-title{font-size:11px;font-weight:700;color:#6b6b67;text-transform:uppercase;letter-spacing:.05em;margin:16px 0 12px;padding-bottom:6px;border-bottom:1px solid #e8e8e4}
+.finding-add-btn{width:100%;padding:10px;border:1px dashed #d4d4ce;border-radius:8px;background:transparent;color:#6b6b67;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;font-family:inherit}
+.finding-add-btn:hover{background:#f5f5f0;border-color:#1D9E75;color:#1D9E75}
+.tab-count{background:#f0f0ec;border-radius:10px;padding:1px 7px;font-size:11px;font-weight:700}
+.status-select{font-size:11px;padding:3px 7px;border:1px solid #d4d4ce;border-radius:6px;background:#fff;color:#1a1a18;cursor:pointer;font-family:inherit}
+.chart-wrap{position:relative;width:100%;height:220px}
+.chart-wrap-sm{position:relative;width:100%;height:180px}
+.settings-list{background:#fafaf8;border:1px solid #e8e8e4;border-radius:8px;padding:14px}
+.settings-list h3{font-size:11px;font-weight:700;color:#6b6b67;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
 .tag-list{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
 .tag{font-size:12px;padding:3px 10px;background:#fff;border:1px solid #d4d4ce;border-radius:10px;display:inline-flex;align-items:center;gap:6px;color:#1a1a18}
-.tag-del{cursor:pointer;color:#999;font-size:15px;line-height:1}
+.tag-del{cursor:pointer;color:#aaa;font-size:15px;line-height:1}
 .tag-del:hover{color:#E24B4A}
 .add-tag-row{display:flex;gap:8px}
-.add-tag-row input{font-size:12px;padding:5px 10px;border:1px solid #d4d4ce;border-radius:8px;background:#fff;color:#1a1a18;flex:1}
+.add-tag-row input{font-size:12px;padding:5px 10px;border:1px solid #d4d4ce;border-radius:8px;background:#fff;color:#1a1a18;flex:1;font-family:inherit}
 .overdue-row td{color:#A32D2D}
-.chart-wrap{position:relative;width:100%;height:220px}
-.tab-count{background:#f0f0ec;border-radius:10px;padding:1px 7px;font-size:11px;font-weight:600}
-.status-select{font-size:11px;padding:3px 7px;border:1px solid #d4d4ce;border-radius:6px;background:#fff;color:#1a1a18;cursor:pointer}
+.year-bar{display:flex;align-items:center;gap:10px;margin-bottom:16px;background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:10px 16px}
+.year-bar label{font-size:12px;font-weight:700;color:#6b6b67;text-transform:uppercase;letter-spacing:.04em}
+.year-btn{font-size:12px;padding:4px 12px;border:1px solid #d4d4ce;border-radius:6px;background:#fff;color:#1a1a18;cursor:pointer;font-family:inherit}
+.year-btn.active{background:#1D9E75;color:#fff;border-color:#1D9E75;font-weight:700}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1000;display:flex;align-items:center;justify-content:center}
+.modal{background:#fff;border-radius:14px;padding:24px;width:90%;max-width:680px;max-height:85vh;overflow-y:auto;border:1px solid #e8e8e4}
+.modal-title{font-size:15px;font-weight:700;margin-bottom:16px;color:#1a1a18}
+.pin-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;display:flex;align-items:center;justify-content:center}
+.pin-box{background:#fff;border-radius:16px;padding:32px;width:320px;text-align:center;border:1px solid #e8e8e4}
+.pin-box h2{font-size:16px;font-weight:700;margin-bottom:8px}
+.pin-box p{font-size:13px;color:#6b6b67;margin-bottom:20px}
+.pin-input{font-size:20px;padding:12px;text-align:center;border:1px solid #d4d4ce;border-radius:10px;width:100%;margin-bottom:12px;letter-spacing:4px;font-family:inherit}
+.pin-error{color:#A32D2D;font-size:12px;margin-bottom:8px;min-height:18px}
+.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:14px}
+.gear-link{color:#1D9E75;text-decoration:none;font-size:12px;display:inline-flex;align-items:center;gap:4px}
+.gear-link:hover{text-decoration:underline}
+.action-btns{display:flex;gap:6px;align-items:center}
+.confirm-del{background:#FFF5F5;border:1px solid #FCEBEB;border-radius:8px;padding:12px;margin-top:8px;font-size:13px;color:#A32D2D}
+.yoy-section{margin-top:14px}
+.empty-state{text-align:center;padding:48px;color:#6b6b67;font-size:13px}
+.export-bar{display:flex;gap:8px;align-items:center}
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <div class="topbar-brand"><i class="ti ti-clipboard-check" style="font-size:18px;color:#1D9E75"></i> FQC Audit <span>Tracker</span></div>
+  <div class="topbar-brand"><i class="ti ti-clipboard-check" style="font-size:20px;color:#1D9E75"></i> FQC Audit <span>Tracker</span></div>
   <div class="nav-tab active" onclick="showTab('dashboard')" id="tab-dashboard"><i class="ti ti-chart-bar"></i> Dashboard</div>
-  <div class="nav-tab" onclick="showTab('tracker')" id="tab-tracker"><i class="ti ti-list"></i> Findings tracker <span class="tab-count" id="cnt-tracker">0</span></div>
+  <div class="nav-tab" onclick="showTab('tracker')" id="tab-tracker"><i class="ti ti-list"></i> Findings <span class="tab-count" id="cnt-tracker">0</span></div>
   <div class="nav-tab" onclick="showTab('new-audit')" id="tab-new-audit"><i class="ti ti-plus"></i> New audit</div>
-  <div class="nav-tab" onclick="showTab('settings')" id="tab-settings"><i class="ti ti-settings"></i> Settings</div>
+  <div class="nav-tab" onclick="showTab('yoy')" id="tab-yoy"><i class="ti ti-chart-arrows-vertical"></i> Year vs Year</div>
+  <div class="nav-tab" onclick="requestSettings()" id="tab-settings"><i class="ti ti-settings"></i> Settings</div>
 </div>
 
 <div id="view-dashboard" class="content"></div>
 <div id="view-tracker" class="content" style="display:none"></div>
 <div id="view-new-audit" class="content" style="display:none"></div>
+<div id="view-yoy" class="content" style="display:none"></div>
 <div id="view-settings" class="content" style="display:none"></div>
+<div id="modal-container"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
+// ── CONFIG ────────────────────────────────────────────────────────────────────
+const SETTINGS_PIN = "TechHub26";
+let settingsUnlocked = false;
+
 const REGIONS = {
   'Kuwait':['Kuwait'],
   'Middle East':['Saudi Arabia','Oman','Iraq','UAE'],
@@ -115,77 +151,91 @@ const MASTER = {
 };
 
 let audits = [
-  {id:'KU-ADT-26-0136',date:'2026-05-22',auditor:'Mohammed Al-Jaberi',country:'Kuwait',location:'KOC ESP',client:'KOC',segment:'ESPO',type:'Quality',title:'Field visit for wells in GC-24',posFindings:'Stop work authority used correctly to halt untested belt use on boom truck.',negFindings:'Multiple SOP breaches: PPE non-compliance, VSD doors not sealed, wrong equipment used, pressure gauge covers left in place.',status:'Open'},
-  {id:'CO-ADT-26-0002',date:'2026-02-26',auditor:'Lida C. Pinilla',country:'Colombia',location:'Villavicencio',client:'Ecopetrol',segment:'ESPO',type:'HSE',title:'GCH Field Surface Inspection Audit',posFindings:'High knowledge level observed. Strong commitment to good practices including proper care of tools, adequate vehicle maintenance, and compliance with housekeeping standards.',negFindings:'Update field procedures for current ops standards. Standardize HSE documentation. Provide targeted training.',status:'Open'},
-  {id:'KU-ADT-26-0122',date:'2026-05-11',auditor:'Mohammed Al-Jaberi',country:'Kuwait',location:'KOC ESP',client:'KOC',segment:'ESPO',type:'Quality',title:'Wells ERL +90% performance and data quality review',posFindings:'Data entry discipline improved significantly versus prior quarter.',negFindings:'Three wells with inconsistent monitoring intervals. Data gap in two ERL records.',status:'Open'},
-  {id:'KU-ADT-25-0451',date:'2025-12-06',auditor:'Mohammed Al-Jaberi',country:'Kuwait',location:'KOC ESP',client:'KOC',segment:'ESPO',type:'Quality',title:'RA-GC-15 monitoring crew field visit observation',posFindings:'Crew demonstrated solid understanding of ESP operation basics.',negFindings:'Monitoring frequency below agreed schedule. No field notebook maintained.',status:'Open'},
-  {id:'EC-ADT-26-0014',date:'2026-05-10',auditor:'Lida C. Pinilla',country:'Ecuador',location:'Coca',client:'Petroamazonas',segment:'ESP & HPS',type:'HSE',title:'PKNB-022 Pulling operation',posFindings:'JSA completed and signed by all crew members before operation commenced.',negFindings:'Two crew members without proper PPE during pulling phase.',status:'Open'},
+  {id:'KU-ADT-26-0136',date:'2026-05-22',auditor:'Mohammed Al-Jaberi',country:'Kuwait',location:'KOC ESP',client:'KOC',segment:'ESPO',type:'Quality',title:'Field visit for wells in GC-24',posFindings:'Stop work authority used correctly to halt untested belt use on boom truck.',negFindings:'Multiple SOP breaches: PPE non-compliance, VSD doors not sealed, wrong equipment used.',status:'Open',gearLink:''},
+  {id:'CO-ADT-26-0002',date:'2026-02-26',auditor:'Lida C. Pinilla',country:'Colombia',location:'Villavicencio',client:'Ecopetrol',segment:'ESPO',type:'HSE',title:'GCH Field Surface Inspection Audit',posFindings:'High knowledge level. Strong commitment to good practices.',negFindings:'Update field procedures. Standardize HSE documentation. Provide targeted training.',status:'Open',gearLink:''},
+  {id:'KU-ADT-26-0122',date:'2026-05-11',auditor:'Mohammed Al-Jaberi',country:'Kuwait',location:'KOC ESP',client:'KOC',segment:'ESPO',type:'Quality',title:'Wells ERL +90% performance and data quality review',posFindings:'Data entry discipline improved significantly versus prior quarter.',negFindings:'Three wells with inconsistent monitoring intervals. Data gap in two ERL records.',status:'Open',gearLink:''},
+  {id:'KU-ADT-25-0451',date:'2025-12-06',auditor:'Mohammed Al-Jaberi',country:'Kuwait',location:'KOC ESP',client:'KOC',segment:'ESPO',type:'Quality',title:'RA-GC-15 monitoring crew field visit observation',posFindings:'Crew demonstrated solid understanding of ESP operation basics.',negFindings:'Monitoring frequency below agreed schedule. No field notebook maintained.',status:'Open',gearLink:''},
+  {id:'EC-ADT-26-0014',date:'2026-05-10',auditor:'Lida C. Pinilla',country:'Ecuador',location:'Coca',client:'Petroamazonas',segment:'ESP & HPS',type:'HSE',title:'PKNB-022 Pulling operation',posFindings:'JSA completed and signed by all crew members before operation commenced.',negFindings:'Two crew members without proper PPE during pulling phase.',status:'Open',gearLink:''},
 ];
 
 let findings = [
-  {id:'F001',auditId:'KU-ADT-26-0136',seq:1,description:'VSD door was not closed and securely sealed during operation. Water ingress caused 17h 14min downtime. Display System control board damaged.',classification:'Critical',category:'Equipment & Tools',owner:'Nithin Thomas',dueDate:'2026-05-09',status:'Overdue',closureDate:''},
-  {id:'F002',auditId:'KU-ADT-26-0136',seq:2,description:'DC bus capacitor blown due to repeated restart attempts by crew. VSD tripped due to low KVA. Crew continued restarting without diagnosing root cause, risking motor/cable/EFT damage.',classification:'Critical',category:'Electrical Safety',owner:'Nithin Thomas',dueDate:'2026-05-30',status:'Open',closureDate:''},
-  {id:'F003',auditId:'KU-ADT-26-0136',seq:3,description:'Six-pulse VSD installed against contract specification. Higher harmonic distortion and poor enclosure condition — not suitable for operation per contract. Should have been rejected before commissioning.',classification:'NC',category:'SOP / Contractual Breach',owner:'Nithin Thomas',dueDate:'2026-05-31',status:'Open',closureDate:''},
-  {id:'F004',auditId:'KU-ADT-26-0136',seq:4,description:'Crew without full PPE during surface equipment conversion. Untested belts on boom truck. Ladder available but unused — improper preparation led to VSD damage.',classification:'Major',category:'PPE Compliance',owner:'Nithin Thomas',dueDate:'2026-05-30',status:'Open',closureDate:''},
-  {id:'F005',auditId:'KU-ADT-26-0136',seq:5,description:'Extra sensor chock kept on location. No VSD or transformer plate or lugs used.',classification:'Minor',category:'Housekeeping',owner:'Nithin Thomas',dueDate:'2026-04-04',status:'Overdue',closureDate:''},
-  {id:'F006',auditId:'KU-ADT-26-0136',seq:6,description:'Underload alarm bypassed on SA-0503. Direct SOP violation.',classification:'NC',category:'SOP / Contractual Breach',owner:'Nithin Thomas',dueDate:'2026-05-30',status:'Open',closureDate:''},
-  {id:'F007',auditId:'KU-ADT-26-0136',seq:7,description:'Confirm if crew can access the restricted area and whether the well case was reported to KOC as required.',classification:'Major',category:'Documentation',owner:'Kolasserikuttiyil Sreekumar',dueDate:'2026-05-30',status:'Open',closureDate:''},
-  {id:'F008',auditId:'KU-ADT-26-0136',seq:8,description:'VSD display window not closed on SA-0503.',classification:'Minor',category:'Equipment & Tools',owner:'Nithin Thomas',dueDate:'2026-05-30',status:'Open',closureDate:''},
-  {id:'F009',auditId:'KU-ADT-26-0136',seq:9,description:'VSD filter removed and kept on location instead of being reinstalled after maintenance.',classification:'Minor',category:'Housekeeping',owner:'Nithin Thomas',dueDate:'2026-05-30',status:'Open',closureDate:''},
-  {id:'F010',auditId:'KU-ADT-26-0136',seq:10,description:'Stop work authority correctly exercised — crew halted job when untested belts identified on boom truck. Commendable proactive safety behavior.',classification:'Strength',category:'HSE Behavior',owner:'',dueDate:'',status:'Closed',closureDate:'2026-05-22'},
-  {id:'F011',auditId:'CO-ADT-26-0002',seq:1,description:'Field procedures not aligned with current operational practices and applicable client requirements.',classification:'Major',category:'Documentation',owner:'Lida C. Pinilla',dueDate:'2026-04-30',status:'Open',closureDate:''},
-  {id:'F012',auditId:'CO-ADT-26-0002',seq:2,description:'General HSE documentation not current, controlled, or compliant with corporate requirements.',classification:'Major',category:'SOP / Contractual Breach',owner:'Lida C. Pinilla',dueDate:'2026-04-30',status:'Open',closureDate:''},
-  {id:'F013',auditId:'EC-ADT-26-0014',seq:1,description:'Two crew members observed without correct PPE during pulling phase — no hard hats and one missing safety glasses.',classification:'Major',category:'PPE Compliance',owner:'Lida C. Pinilla',dueDate:'2026-05-20',status:'Open',closureDate:''},
+  {id:'F001',auditId:'KU-ADT-26-0136',seq:1,description:'VSD door not closed/sealed. Water ingress caused 17h 14min downtime. Display System control board damaged.',classification:'Critical',category:'Equipment & Tools',owner:'Nithin Thomas',dueDate:'2026-05-09',status:'Overdue',closureDate:'',gearLink:''},
+  {id:'F002',auditId:'KU-ADT-26-0136',seq:2,description:'DC bus capacitor blown. Crew repeatedly restarted without diagnosis. High risk to motor, cable, EFT.',classification:'Critical',category:'Electrical Safety',owner:'Nithin Thomas',dueDate:'2026-05-30',status:'Open',closureDate:'',gearLink:''},
+  {id:'F003',auditId:'KU-ADT-26-0136',seq:3,description:'Six-pulse VSD installed against contract specification. Higher harmonic distortion — should have been rejected before commissioning.',classification:'NC',category:'SOP / Contractual Breach',owner:'Nithin Thomas',dueDate:'2026-05-31',status:'Open',closureDate:'',gearLink:''},
+  {id:'F004',auditId:'KU-ADT-26-0136',seq:4,description:'Crew without full PPE during surface equipment conversion. Untested belts on boom truck. Ladder unused — led to VSD damage.',classification:'Major',category:'PPE Compliance',owner:'Nithin Thomas',dueDate:'2026-05-30',status:'Open',closureDate:'',gearLink:''},
+  {id:'F005',auditId:'KU-ADT-26-0136',seq:5,description:'Extra sensor chock kept on location. No VSD or transformer plate or lugs used.',classification:'Minor',category:'Housekeeping',owner:'Nithin Thomas',dueDate:'2026-04-04',status:'Overdue',closureDate:'',gearLink:''},
+  {id:'F006',auditId:'KU-ADT-26-0136',seq:6,description:'Underload alarm bypassed on SA-0503. Direct SOP violation.',classification:'NC',category:'SOP / Contractual Breach',owner:'Nithin Thomas',dueDate:'2026-05-30',status:'Open',closureDate:'',gearLink:''},
+  {id:'F007',auditId:'KU-ADT-26-0136',seq:7,description:'Confirm crew access to restricted area and whether well case was reported to KOC.',classification:'Major',category:'Documentation',owner:'Kolasserikuttiyil Sreekumar',dueDate:'2026-05-30',status:'Open',closureDate:'',gearLink:''},
+  {id:'F008',auditId:'KU-ADT-26-0136',seq:8,description:'VSD display window not closed on SA-0503.',classification:'Minor',category:'Equipment & Tools',owner:'Nithin Thomas',dueDate:'2026-05-30',status:'Open',closureDate:'',gearLink:''},
+  {id:'F009',auditId:'KU-ADT-26-0136',seq:9,description:'VSD filter removed and kept on location instead of being reinstalled.',classification:'Minor',category:'Housekeeping',owner:'Nithin Thomas',dueDate:'2026-05-30',status:'Open',closureDate:'',gearLink:''},
+  {id:'F010',auditId:'KU-ADT-26-0136',seq:10,description:'STRENGTH: Stop work authority correctly exercised — crew halted job when untested belts identified on boom truck.',classification:'Strength',category:'HSE Behavior',owner:'',dueDate:'',status:'Closed',closureDate:'2026-05-22',gearLink:''},
+  {id:'F011',auditId:'CO-ADT-26-0002',seq:1,description:'Field procedures not aligned with current operational practices and client requirements.',classification:'Major',category:'Documentation',owner:'Lida C. Pinilla',dueDate:'2026-04-30',status:'Open',closureDate:'',gearLink:''},
+  {id:'F012',auditId:'CO-ADT-26-0002',seq:2,description:'General HSE documentation not current, controlled, or compliant with corporate requirements.',classification:'Major',category:'SOP / Contractual Breach',owner:'Lida C. Pinilla',dueDate:'2026-04-30',status:'Open',closureDate:'',gearLink:''},
+  {id:'F013',auditId:'EC-ADT-26-0014',seq:1,description:'Two crew members without correct PPE during pulling phase — no hard hats, one missing safety glasses.',classification:'Major',category:'PPE Compliance',owner:'Lida C. Pinilla',dueDate:'2026-05-20',status:'Open',closureDate:'',gearLink:''},
 ];
 
 let activeTab='dashboard';
 let charts={};
 let draftFindings=[];
 
-function getRegion(country){
-  for(const [r,cs] of Object.entries(REGIONS)){if(cs.includes(country))return r;}
-  return 'Unknown';
-}
+// ── HELPERS ───────────────────────────────────────────────────────────────────
+function getRegion(country){for(const[r,cs]of Object.entries(REGIONS)){if(cs.includes(country))return r;}return 'Unknown';}
+function regionBadge(country){const r=getRegion(country);const cls={'Kuwait':'kwt','Middle East':'me','LATAM':'latam','Africa':'afr'}[r]||'me';return `<span class="badge badge-${cls}">${r}</span>`;}
+function clsBadge(c){const m={NC:'nc',Critical:'critical',Major:'major',Minor:'minor',Strength:'strength'};return `<span class="badge badge-${m[c]||'minor'}">${c}</span>`;}
+function stsBadge(s){const m={Open:'open',Overdue:'overdue',Closed:'closed'};return `<span class="badge badge-${m[s]||'open'}">${s}</span>`;}
+function typeBadge(t){if(t==='HSE')return`<span class="badge badge-hse">HSE</span>`;if(t==='Quality')return`<span class="badge badge-quality">Quality</span>`;return`<span class="badge badge-both">HSE & Quality</span>`;}
+function selOpts(arr,sel=''){return arr.map(a=>`<option value="${a}"${a===sel?' selected':''}>${a}</option>`).join('');}
+function getYear(dateStr){return dateStr?new Date(dateStr).getFullYear():null;}
+function allYears(){const ys=new Set([...audits.map(a=>getYear(a.date)),...findings.map(f=>{const a=audits.find(x=>x.id===f.auditId);return a?getYear(a.date):null;})].filter(Boolean));return [...ys].sort();}
+function destroyCharts(){Object.values(charts).forEach(c=>{try{c.destroy();}catch(e){}});charts={};}
 
-function regionBadge(country){
-  const r=getRegion(country);
-  const cls={'Kuwait':'kwt','Middle East':'me','LATAM':'latam','Africa':'afr'}[r]||'me';
-  return `<span class="badge badge-${cls}">${r}</span>`;
-}
-
-function clsBadge(c){
-  const m={NC:'nc',Critical:'critical',Major:'major',Minor:'minor',Strength:'strength'};
-  return `<span class="badge badge-${m[c]||'minor'}">${c}</span>`;
-}
-
-function stsBadge(s){
-  const m={Open:'open',Overdue:'overdue',Closed:'closed'};
-  return `<span class="badge badge-${m[s]||'open'}">${s}</span>`;
-}
-
-function typeBadge(t){
-  if(t==='HSE')return `<span class="badge badge-hse">HSE</span>`;
-  if(t==='Quality')return `<span class="badge badge-quality">Quality</span>`;
-  return `<span class="badge badge-both">HSE & Quality</span>`;
-}
-
-function selOpts(arr,sel=''){
-  return arr.map(a=>`<option value="${a}"${a===sel?' selected':''}>${a}</option>`).join('');
-}
-
+// ── TAB NAVIGATION ────────────────────────────────────────────────────────────
 function showTab(tab){
   activeTab=tab;
-  ['dashboard','tracker','new-audit','settings'].forEach(t=>{
-    document.getElementById('view-'+t).style.display=t===tab?'':'none';
-    const el=document.getElementById('tab-'+t);
-    if(el)el.classList.toggle('active',t===tab);
+  ['dashboard','tracker','new-audit','yoy','settings'].forEach(t=>{
+    const v=document.getElementById('view-'+t);
+    const tb=document.getElementById('tab-'+t);
+    if(v)v.style.display=t===tab?'':'none';
+    if(tb)tb.classList.toggle('active',t===tab);
   });
+  destroyCharts();
   if(tab==='dashboard')renderDashboard();
   else if(tab==='tracker')renderTracker();
   else if(tab==='new-audit')renderNewAudit();
+  else if(tab==='yoy')renderYoY();
   else if(tab==='settings')renderSettings();
 }
 
+function requestSettings(){
+  if(settingsUnlocked){showTab('settings');return;}
+  showPinModal();
+}
+
+function showPinModal(){
+  document.getElementById('modal-container').innerHTML=`
+  <div class="pin-overlay" id="pin-overlay">
+    <div class="pin-box">
+      <i class="ti ti-lock" style="font-size:32px;color:#1D9E75;margin-bottom:12px;display:block"></i>
+      <h2>Settings Access</h2>
+      <p>Enter your permission code to access Settings</p>
+      <input class="pin-input" type="password" id="pin-input" placeholder="••••••••" maxlength="20" onkeydown="if(event.key==='Enter')checkPin()">
+      <div class="pin-error" id="pin-error"></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="checkPin()"><i class="ti ti-lock-open"></i> Unlock</button>
+      <button class="btn" style="width:100%;justify-content:center;margin-top:8px" onclick="closePinModal()">Cancel</button>
+    </div>
+  </div>`;
+  setTimeout(()=>document.getElementById('pin-input')?.focus(),100);
+}
+
+function checkPin(){
+  const val=document.getElementById('pin-input')?.value||'';
+  if(val===SETTINGS_PIN){settingsUnlocked=true;closePinModal();showTab('settings');}
+  else{document.getElementById('pin-error').textContent='Incorrect code. Please try again.';document.getElementById('pin-input').value='';}
+}
+
+function closePinModal(){document.getElementById('modal-container').innerHTML='';}
+
+// ── DASHBOARD ─────────────────────────────────────────────────────────────────
 function renderDashboard(){
   const el=document.getElementById('view-dashboard');
   const total=findings.length;
@@ -195,113 +245,145 @@ function renderDashboard(){
   const nc=findings.filter(f=>f.classification==='NC').length;
   const critical=findings.filter(f=>f.classification==='Critical').length;
   const strengths=findings.filter(f=>f.classification==='Strength').length;
+  const major=findings.filter(f=>f.classification==='Major').length;
   const closureRate=total>0?Math.round((closed/total)*100):0;
-  const overdueAudits=audits.filter(a=>findings.some(f=>f.auditId===a.id&&f.status==='Overdue')).length;
-
-  const byRegion={};
-  audits.forEach(a=>{const r=getRegion(a.country);byRegion[r]=(byRegion[r]||0)+1;});
+  const avgDays=(()=>{const cls=findings.filter(f=>f.status==='Closed'&&f.closureDate&&f.dueDate);if(!cls.length)return'—';const s=cls.reduce((acc,f)=>{return acc+(new Date(f.closureDate)-new Date(f.dueDate))/(1000*60*60*24);},0);return Math.round(Math.abs(s/cls.length))+'d';})();
+  const topCat=(()=>{const m={};findings.forEach(f=>{if(f.category)m[f.category]=(m[f.category]||0)+1;});const s=Object.entries(m).sort((a,b)=>b[1]-a[1]);return s.length?s[0][0].split(' ')[0]:'—';})();
+  const topAuditor=(()=>{const m={};audits.forEach(a=>{if(a.auditor)m[a.auditor]=(m[a.auditor]||0)+1;});const s=Object.entries(m).sort((a,b)=>b[1]-a[1]);return s.length?s[0][0].split(' ').slice(-1)[0]:'—';})();
 
   const byClass={NC:0,Critical:0,Major:0,Minor:0,Strength:0};
   findings.forEach(f=>{byClass[f.classification]=(byClass[f.classification]||0)+1;});
+
+  const byRegion={};
+  audits.forEach(a=>{const r=getRegion(a.country);byRegion[r]=(byRegion[r]||0)+1;});
 
   const byMonth={};
   findings.filter(f=>f.classification!=='Strength').forEach(f=>{
     const a=audits.find(x=>x.id===f.auditId);
     if(a&&a.date){const d=new Date(a.date);const m=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;byMonth[m]=(byMonth[m]||0)+1;}
   });
-  const months=Object.keys(byMonth).sort().slice(-6);
+  const months=Object.keys(byMonth).sort().slice(-8);
 
   el.innerHTML=`
   <div class="section-head">
     <div class="section-title">KPI Dashboard</div>
-    <div style="font-size:12px;color:#6b6b67">Year to date · 2026 · Alkhorayef Petroleum — FQC Program</div>
+    <div style="font-size:12px;color:#6b6b67">Year to date · All regions · Alkhorayef Petroleum FQC Program</div>
   </div>
-  <div class="grid-4" style="margin-bottom:16px">
+
+  <div class="kpi-row" style="margin-bottom:12px">
     <div class="metric-card"><div class="metric-label">Total findings</div><div class="metric-value">${total}</div><div class="metric-sub">${audits.length} audits logged</div></div>
-    <div class="metric-card"><div class="metric-label">Open</div><div class="metric-value" style="color:#854F0B">${open}</div><div class="metric-sub">${overdue} overdue · ${overdueAudits} audit(s) affected</div></div>
-    <div class="metric-card"><div class="metric-label">Closure rate</div><div class="metric-value" style="color:#3B6D11">${closureRate}%</div><div class="metric-sub">${closed} corrective actions closed</div></div>
-    <div class="metric-card"><div class="metric-label">NC + Critical</div><div class="metric-value" style="color:#A32D2D">${nc+critical}</div><div class="metric-sub">${strengths} strength${strengths!==1?'s':''} observed</div></div>
+    <div class="metric-card"><div class="metric-label">Open</div><div class="metric-value" style="color:#854F0B">${open}</div><div class="metric-sub">${overdue} overdue</div></div>
+    <div class="metric-card"><div class="metric-label">Closed</div><div class="metric-value" style="color:#3B6D11">${closed}</div><div class="metric-sub">Closure rate: ${closureRate}%</div></div>
+    <div class="metric-card"><div class="metric-label">NC + Critical</div><div class="metric-value" style="color:#A32D2D">${nc+critical}</div><div class="metric-sub">${major} major findings</div></div>
+    <div class="metric-card"><div class="metric-label">Strengths</div><div class="metric-value" style="color:#3B6D11">${strengths}</div><div class="metric-sub">Best practices noted</div></div>
   </div>
+
+  <div class="kpi-row" style="margin-bottom:16px">
+    <div class="metric-card"><div class="metric-label">Avg days to close</div><div class="metric-value" style="font-size:22px">${avgDays}</div><div class="metric-sub">Closed CAs only</div></div>
+    <div class="metric-card"><div class="metric-label">Overdue CAs</div><div class="metric-value" style="color:#A32D2D;font-size:22px">${overdue}</div><div class="metric-sub">Requires immediate action</div></div>
+    <div class="metric-card"><div class="metric-label">Top root cause</div><div class="metric-value" style="font-size:16px;padding-top:4px">${topCat}</div><div class="metric-sub">Most frequent category</div></div>
+    <div class="metric-card"><div class="metric-label">Most active auditor</div><div class="metric-value" style="font-size:16px;padding-top:4px">${topAuditor}</div><div class="metric-sub">By audit count</div></div>
+    <div class="metric-card"><div class="metric-label">Findings / audit</div><div class="metric-value" style="font-size:22px">${audits.length?Math.round(total/audits.length*10)/10:'—'}</div><div class="metric-sub">Average per audit</div></div>
+  </div>
+
   <div class="grid-2" style="margin-bottom:14px">
     <div class="card">
-      <div style="font-size:13px;font-weight:600;margin-bottom:10px">Findings by classification</div>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;font-size:11px;color:#6b6b67">
+      <div style="font-size:13px;font-weight:700;margin-bottom:12px">Findings by classification</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;font-size:11px;color:#6b6b67">
         <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#E24B4A;display:inline-block"></span>NC (${byClass.NC})</span>
         <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#D85A30;display:inline-block"></span>Critical (${byClass.Critical})</span>
         <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#EF9F27;display:inline-block"></span>Major (${byClass.Major})</span>
         <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#378ADD;display:inline-block"></span>Minor (${byClass.Minor})</span>
         <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#639922;display:inline-block"></span>Strength (${byClass.Strength})</span>
       </div>
-      <div class="chart-wrap"><canvas id="chartClass" role="img" aria-label="Bar chart showing findings by classification"></canvas></div>
+      <div class="chart-wrap-sm"><canvas id="chartClass"></canvas></div>
     </div>
     <div class="card">
-      <div style="font-size:13px;font-weight:600;margin-bottom:10px">Monthly findings trend</div>
-      <div style="display:flex;gap:12px;margin-bottom:12px;font-size:11px;color:#6b6b67">
-        <span style="display:flex;align-items:center;gap:4px"><span style="width:16px;height:2px;background:#1D9E75;display:inline-block"></span>Finding count (excl. strengths)</span>
+      <div style="font-size:13px;font-weight:700;margin-bottom:12px">Corrective action status</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;font-size:11px;color:#6b6b67">
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#EF9F27;display:inline-block"></span>Open (${open})</span>
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#E24B4A;display:inline-block"></span>Overdue (${overdue})</span>
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#639922;display:inline-block"></span>Closed (${closed})</span>
       </div>
-      <div class="chart-wrap"><canvas id="chartTrend" role="img" aria-label="Line chart showing monthly findings trend"></canvas></div>
+      <div class="chart-wrap-sm"><canvas id="chartStatus"></canvas></div>
     </div>
   </div>
-  <div class="grid-2">
+
+  <div class="grid-2" style="margin-bottom:14px">
     <div class="card">
-      <div style="font-size:13px;font-weight:600;margin-bottom:10px">Audit distribution by region</div>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px;font-size:11px;color:#6b6b67">
+      <div style="font-size:13px;font-weight:700;margin-bottom:12px">Monthly findings trend</div>
+      <div class="chart-wrap-sm"><canvas id="chartTrend"></canvas></div>
+    </div>
+    <div class="card">
+      <div style="font-size:13px;font-weight:700;margin-bottom:12px">Audits by region</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;font-size:11px;color:#6b6b67">
         <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#378ADD;display:inline-block"></span>Kuwait</span>
         <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#1D9E75;display:inline-block"></span>Middle East</span>
         <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#EF9F27;display:inline-block"></span>LATAM</span>
         <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:50%;background:#D85A30;display:inline-block"></span>Africa</span>
       </div>
-      <div class="chart-wrap"><canvas id="chartRegion" role="img" aria-label="Doughnut chart showing audit distribution by region"></canvas></div>
+      <div class="chart-wrap-sm"><canvas id="chartRegion"></canvas></div>
     </div>
-    <div class="card" style="padding:0;overflow:hidden">
-      <div style="padding:14px 16px 10px;font-size:13px;font-weight:600;border-bottom:1px solid #e8e8e4">Overdue corrective actions</div>
-      <table>
-        <thead><tr><th>Report ID</th><th>Finding description</th><th>Owner</th><th>Due date</th></tr></thead>
-        <tbody>${findings.filter(f=>f.status==='Overdue').map(f=>`
-        <tr class="overdue-row">
-          <td style="font-size:12px;font-weight:500">${f.auditId}</td>
-          <td style="max-width:200px;font-size:12px">${f.description.substring(0,65)}…</td>
-          <td style="font-size:12px">${f.owner||'—'}</td>
-          <td style="font-size:12px;font-weight:500">${f.dueDate||'—'}</td>
-        </tr>`).join('')||'<tr><td colspan="4" style="text-align:center;color:#6b6b67;padding:24px">No overdue items</td></tr>'}
-        </tbody>
-      </table>
+  </div>
+
+  <div class="card" style="padding:0;overflow:hidden">
+    <div style="padding:14px 16px 10px;font-size:13px;font-weight:700;border-bottom:1px solid #e8e8e4;display:flex;justify-content:space-between;align-items:center">
+      <span>Overdue corrective actions</span>
+      <span class="badge badge-overdue">${overdue} overdue</span>
     </div>
+    <table>
+      <thead><tr><th>Report ID</th><th>Finding</th><th>Classification</th><th>Owner</th><th>Due date</th></tr></thead>
+      <tbody>${findings.filter(f=>f.status==='Overdue').map(f=>`
+      <tr class="overdue-row">
+        <td style="font-size:12px;font-weight:700">${f.auditId}</td>
+        <td style="max-width:240px;font-size:12px">${f.description.substring(0,70)}…</td>
+        <td>${clsBadge(f.classification)}</td>
+        <td style="font-size:12px">${f.owner||'—'}</td>
+        <td style="font-size:12px;font-weight:700">${f.dueDate||'—'}</td>
+      </tr>`).join('')||'<tr><td colspan="5" style="text-align:center;color:#6b6b67;padding:24px">No overdue items</td></tr>'}
+      </tbody>
+    </table>
   </div>`;
 
   setTimeout(()=>{
-    Object.values(charts).forEach(c=>{try{c.destroy();}catch(e){}});
-    charts={};
-
+    destroyCharts();
     charts.chartClass=new Chart(document.getElementById('chartClass'),{
       type:'bar',
-      data:{labels:['NC','Critical','Major','Minor','Strength'],datasets:[{label:'Findings',data:[byClass.NC,byClass.Critical,byClass.Major,byClass.Minor,byClass.Strength],backgroundColor:['#E24B4A','#D85A30','#EF9F27','#378ADD','#639922'],borderRadius:5,borderSkipped:false}]},
+      data:{labels:['NC','Critical','Major','Minor','Strength'],datasets:[{data:[byClass.NC,byClass.Critical,byClass.Major,byClass.Minor,byClass.Strength],backgroundColor:['#E24B4A','#D85A30','#EF9F27','#378ADD','#639922'],borderRadius:5,borderSkipped:false}]},
       options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{stepSize:1},grid:{color:'rgba(0,0,0,0.04)'}},x:{grid:{display:false}}}}
     });
-
+    charts.chartStatus=new Chart(document.getElementById('chartStatus'),{
+      type:'doughnut',
+      data:{labels:['Open','Overdue','Closed'],datasets:[{data:[open,overdue,closed],backgroundColor:['#EF9F27','#E24B4A','#639922'],borderWidth:3,borderColor:'#ffffff'}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:16,font:{size:12}}}},cutout:'60%'}
+    });
     charts.chartTrend=new Chart(document.getElementById('chartTrend'),{
       type:'line',
-      data:{labels:months.map(m=>{const[y,mo]=m.split('-');return new Date(y,mo-1).toLocaleString('default',{month:'short'});}),datasets:[{label:'Findings',data:months.map(m=>byMonth[m]||0),borderColor:'#1D9E75',backgroundColor:'rgba(29,158,117,0.08)',tension:0.35,fill:true,pointBackgroundColor:'#1D9E75',pointRadius:4}]},
-      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{stepSize:1},grid:{color:'rgba(0,0,0,0.04)'}},x:{grid:{display:false},ticks:{autoSkip:false}}}}
+      data:{labels:months.map(m=>{const[y,mo]=m.split('-');return new Date(y,mo-1).toLocaleString('default',{month:'short',year:'2-digit'});}),datasets:[{label:'Findings',data:months.map(m=>byMonth[m]||0),borderColor:'#1D9E75',backgroundColor:'rgba(29,158,117,0.08)',tension:0.35,fill:true,pointBackgroundColor:'#1D9E75',pointRadius:4}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{stepSize:1},grid:{color:'rgba(0,0,0,0.04)'}},x:{grid:{display:false}}}}
     });
-
     const rLabels=Object.keys(byRegion);
     const rColors={'Kuwait':'#378ADD','Middle East':'#1D9E75','LATAM':'#EF9F27','Africa':'#D85A30'};
     charts.chartRegion=new Chart(document.getElementById('chartRegion'),{
       type:'doughnut',
       data:{labels:rLabels,datasets:[{data:rLabels.map(r=>byRegion[r]),backgroundColor:rLabels.map(r=>rColors[r]||'#888780'),borderWidth:3,borderColor:'#ffffff'}]},
-      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},cutout:'62%'}
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:16,font:{size:12}}}},cutout:'60%'}
     });
   },150);
 }
 
+// ── TRACKER ───────────────────────────────────────────────────────────────────
 function renderTracker(){
   const el=document.getElementById('view-tracker');
   document.getElementById('cnt-tracker').textContent=findings.filter(f=>f.classification!=='Strength').length;
   el.innerHTML=`
   <div class="section-head">
     <div class="section-title">Corrective actions tracker</div>
-    <button class="btn btn-primary btn-sm" onclick="showTab('new-audit')"><i class="ti ti-plus"></i> New audit</button>
+    <div class="export-bar">
+      <button class="btn btn-sm" onclick="exportCSV()"><i class="ti ti-file-spreadsheet"></i> Export CSV</button>
+      <button class="btn btn-sm" onclick="exportExcel()"><i class="ti ti-file-excel"></i> Export Excel</button>
+      <button class="btn btn-primary btn-sm" onclick="showTab('new-audit')"><i class="ti ti-plus"></i> New audit</button>
+    </div>
   </div>
   <div class="filter-bar">
     <input type="text" placeholder="Search report ID or description…" oninput="filterTracker()" id="tracker-search">
@@ -313,9 +395,7 @@ function renderTracker(){
   </div>
   <div class="card" style="padding:0;overflow:hidden">
   <table>
-    <thead><tr>
-      <th>Report ID</th><th>Date</th><th>Region</th><th>Type</th><th>Classification</th><th>Category</th><th>Description</th><th>Owner</th><th>Due date</th><th>Status</th><th>Update</th>
-    </tr></thead>
+    <thead><tr><th>Report ID</th><th>Date</th><th>Region</th><th>Type</th><th>Classification</th><th>Category</th><th>Description</th><th>GEAR</th><th>Owner</th><th>Due date</th><th>Status</th><th>Update</th><th>Actions</th></tr></thead>
     <tbody id="tracker-body"></tbody>
   </table>
   </div>`;
@@ -330,11 +410,7 @@ function filterTracker(){
   const type=(document.getElementById('fil-type')||{}).value||'';
   const country=(document.getElementById('fil-country')||{}).value||'';
 
-  let rows=findings.map(f=>{
-    const a=audits.find(x=>x.id===f.auditId)||{};
-    return {...f,auditDate:a.date||'',country:a.country||'',auditType:a.type||'',region:getRegion(a.country||'')};
-  });
-
+  let rows=findings.map(f=>{const a=audits.find(x=>x.id===f.auditId)||{};return{...f,auditDate:a.date||'',country:a.country||'',auditType:a.type||'',region:getRegion(a.country||'')};});
   if(search)rows=rows.filter(r=>r.auditId.toLowerCase().includes(search.toLowerCase())||r.description.toLowerCase().includes(search.toLowerCase()));
   if(region)rows=rows.filter(r=>r.region===region);
   if(cls)rows=rows.filter(r=>r.classification===cls);
@@ -344,24 +420,31 @@ function filterTracker(){
 
   const body=document.getElementById('tracker-body');
   if(!body)return;
-  if(!rows.length){body.innerHTML=`<tr><td colspan="11" style="text-align:center;padding:32px;color:#6b6b67">No findings match the current filters</td></tr>`;return;}
+  if(!rows.length){body.innerHTML=`<tr><td colspan="13" class="empty-state">No findings match the current filters</td></tr>`;return;}
   body.innerHTML=rows.map(f=>`
-  <tr>
-    <td style="font-size:12px;font-weight:600">${f.auditId}</td>
+  <tr id="row-${f.id}">
+    <td style="font-size:12px;font-weight:700">${f.auditId}</td>
     <td style="font-size:12px">${f.auditDate||'—'}</td>
     <td>${regionBadge(f.country)}</td>
     <td>${typeBadge(f.auditType)}</td>
     <td>${clsBadge(f.classification)}</td>
-    <td style="font-size:12px;max-width:110px">${f.category}</td>
-    <td style="font-size:12px;max-width:200px">${f.description.substring(0,70)}${f.description.length>70?'…':''}</td>
+    <td style="font-size:11px;max-width:100px">${f.category}</td>
+    <td style="font-size:12px;max-width:200px">${f.description.substring(0,65)}${f.description.length>65?'…':''}</td>
+    <td>${f.gearLink?`<a href="${f.gearLink}" target="_blank" class="gear-link"><i class="ti ti-external-link"></i> GEAR</a>`:'<span style="color:#ccc;font-size:12px">—</span>'}</td>
     <td style="font-size:12px">${f.owner||'—'}</td>
-    <td style="font-size:12px;color:${f.status==='Overdue'?'#A32D2D':'#1a1a18'};font-weight:${f.status==='Overdue'?'600':'400'}">${f.dueDate||'—'}</td>
+    <td style="font-size:12px;color:${f.status==='Overdue'?'#A32D2D':'#1a1a18'};font-weight:${f.status==='Overdue'?'700':'400'}">${f.dueDate||'—'}</td>
     <td>${stsBadge(f.status)}</td>
     <td><select class="status-select" onchange="updateStatus('${f.id}',this.value)">
       <option ${f.status==='Open'?'selected':''}>Open</option>
       <option ${f.status==='Overdue'?'selected':''}>Overdue</option>
       <option ${f.status==='Closed'?'selected':''}>Closed</option>
     </select></td>
+    <td>
+      <div class="action-btns">
+        <button class="btn btn-sm btn-icon" title="Edit finding" onclick="editFinding('${f.id}')"><i class="ti ti-pencil"></i></button>
+        <button class="btn btn-sm btn-icon" title="Delete finding" style="color:#E24B4A;border-color:#FCEBEB" onclick="confirmDelete('${f.id}')"><i class="ti ti-trash"></i></button>
+      </div>
+    </td>
   </tr>`).join('');
 }
 
@@ -370,6 +453,91 @@ function updateStatus(fid,val){
   if(f){f.status=val;if(val==='Closed')f.closureDate=new Date().toISOString().split('T')[0];}
 }
 
+function confirmDelete(fid){
+  const f=findings.find(x=>x.id===fid);
+  if(!f)return;
+  document.getElementById('modal-container').innerHTML=`
+  <div class="modal-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal">
+      <div class="modal-title"><i class="ti ti-alert-triangle" style="color:#E24B4A"></i> Delete finding</div>
+      <p style="font-size:13px;margin-bottom:12px">Are you sure you want to permanently delete this finding?</p>
+      <div class="confirm-del"><strong>${f.auditId} · ${f.classification}</strong><br>${f.description.substring(0,100)}…</div>
+      <div style="display:flex;gap:8px;margin-top:16px;justify-content:flex-end">
+        <button class="btn" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-danger" onclick="deleteFinding('${fid}')"><i class="ti ti-trash"></i> Delete permanently</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function deleteFinding(fid){
+  findings=findings.filter(f=>f.id!==fid);
+  closeModal();
+  filterTracker();
+}
+
+function editFinding(fid){
+  const f=findings.find(x=>x.id===fid);
+  if(!f)return;
+  document.getElementById('modal-container').innerHTML=`
+  <div class="modal-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal">
+      <div class="modal-title"><i class="ti ti-pencil" style="color:#1D9E75"></i> Edit finding — ${f.auditId}</div>
+      <div class="grid-2">
+        <div class="field"><label>Classification</label>
+          <select id="ef-cls">${['NC','Critical','Major','Minor','Strength'].map(c=>`<option ${c===f.classification?'selected':''}>${c}</option>`).join('')}</select>
+        </div>
+        <div class="field"><label>Root cause category</label>
+          <select id="ef-cat"><option value="">Select…</option>${selOpts(MASTER.categories,f.category)}</select>
+        </div>
+      </div>
+      <div class="field"><label>Finding description & corrective action</label>
+        <textarea id="ef-desc" rows="3">${f.description}</textarea>
+      </div>
+      <div class="grid-2">
+        <div class="field"><label>Responsible owner</label>
+          <select id="ef-owner"><option value="">Select…</option>${selOpts(MASTER.owners,f.owner)}</select>
+        </div>
+        <div class="field"><label>Due date</label>
+          <input type="date" id="ef-due" value="${f.dueDate}">
+        </div>
+      </div>
+      <div class="field"><label>Status</label>
+        <select id="ef-sts">
+          <option ${f.status==='Open'?'selected':''}>Open</option>
+          <option ${f.status==='Overdue'?'selected':''}>Overdue</option>
+          <option ${f.status==='Closed'?'selected':''}>Closed</option>
+        </select>
+      </div>
+      <div class="field"><label>GEAR link (photos & evidence)</label>
+        <input type="url" id="ef-gear" value="${f.gearLink||''}" placeholder="https://gear.alkhorayef.com/report/...">
+      </div>
+      <div style="display:flex;gap:8px;margin-top:8px;justify-content:flex-end">
+        <button class="btn" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveEdit('${fid}')"><i class="ti ti-check"></i> Save changes</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function saveEdit(fid){
+  const f=findings.find(x=>x.id===fid);
+  if(!f)return;
+  f.classification=document.getElementById('ef-cls').value;
+  f.category=document.getElementById('ef-cat').value;
+  f.description=document.getElementById('ef-desc').value;
+  f.owner=document.getElementById('ef-owner').value;
+  f.dueDate=document.getElementById('ef-due').value;
+  f.status=document.getElementById('ef-sts').value;
+  f.gearLink=document.getElementById('ef-gear').value;
+  if(f.status==='Closed'&&!f.closureDate)f.closureDate=new Date().toISOString().split('T')[0];
+  closeModal();
+  filterTracker();
+}
+
+function closeModal(){document.getElementById('modal-container').innerHTML='';}
+
+// ── NEW AUDIT ─────────────────────────────────────────────────────────────────
 function renderNewAudit(){
   const el=document.getElementById('view-new-audit');
   draftFindings=[];
@@ -392,6 +560,7 @@ function renderNewAudit(){
       <div class="field"><label>Audit type</label><select id="f-type"><option value="">Select type…</option><option>HSE</option><option>Quality</option><option>HSE & Quality</option></select></div>
       <div class="field"><label>Audit title</label><select id="f-title"><option value="">Select title…</option>${selOpts(MASTER.auditTitles)}</select></div>
     </div>
+    <div class="field"><label>GEAR link (full report with photos & evidence)</label><input type="url" id="f-gear" placeholder="https://gear.alkhorayef.com/report/..."></div>
     <div class="grid-2">
       <div class="field"><label>Positive findings / strengths observed</label><textarea id="f-pos" placeholder="Describe observed best practices or commendable behaviors…"></textarea></div>
       <div class="field"><label>General findings summary</label><textarea id="f-neg" placeholder="Summarize overall areas requiring improvement…"></textarea></div>
@@ -410,7 +579,7 @@ function renderNewAudit(){
 
 function addDraftFinding(){
   const idx=draftFindings.length;
-  draftFindings.push({seq:idx+1,description:'',classification:'Major',category:'',owner:'',dueDate:'',status:'Open'});
+  draftFindings.push({seq:idx+1,description:'',classification:'Major',category:'',owner:'',dueDate:'',status:'Open',gearLink:''});
   renderDraftFindings();
 }
 
@@ -421,7 +590,7 @@ function renderDraftFindings(){
   <div class="findings-block">
     <div class="finding-header">
       <span><span style="font-size:11px;color:#6b6b67;margin-right:6px">#${f.seq}</span>${clsBadge(f.classification)}<span style="margin-left:8px;font-weight:400;color:#6b6b67;font-size:12px">${f.description?f.description.substring(0,50)+'…':'New finding'}</span></span>
-      <span onclick="removeDraftFinding(${i})" style="cursor:pointer;color:#999;font-size:20px;line-height:1" title="Remove">×</span>
+      <span onclick="removeDraftFinding(${i})" style="cursor:pointer;color:#aaa;font-size:22px;line-height:1" title="Remove">×</span>
     </div>
     <div class="finding-body">
       <div class="field" style="margin:0"><label>Classification</label>
@@ -441,6 +610,9 @@ function renderDraftFindings(){
       <div class="field" style="margin:0"><label>Due date</label>
         <input type="date" value="${f.dueDate}" onchange="draftFindings[${i}].dueDate=this.value">
       </div>
+      <div class="field" style="margin:0;grid-column:1/-1"><label>GEAR link for this finding (photos & evidence)</label>
+        <input type="url" value="${f.gearLink||''}" onchange="draftFindings[${i}].gearLink=this.value" placeholder="https://gear.alkhorayef.com/finding/...">
+      </div>
     </div>
   </div>`).join('');
 }
@@ -455,20 +627,117 @@ function submitAudit(){
   const id=document.getElementById('f-id').value.trim();
   if(!id){alert('Report ID is required.');return;}
   if(audits.find(a=>a.id===id)){alert('A report with this ID already exists.');return;}
-  const audit={id,date:document.getElementById('f-date').value,auditor:document.getElementById('f-auditor').value,country:document.getElementById('f-country').value,location:document.getElementById('f-location').value,client:document.getElementById('f-client').value,segment:document.getElementById('f-segment').value,type:document.getElementById('f-type').value,title:document.getElementById('f-title').value,posFindings:document.getElementById('f-pos').value,negFindings:document.getElementById('f-neg').value,status:'Open'};
+  const audit={id,date:document.getElementById('f-date').value,auditor:document.getElementById('f-auditor').value,country:document.getElementById('f-country').value,location:document.getElementById('f-location').value,client:document.getElementById('f-client').value,segment:document.getElementById('f-segment').value,type:document.getElementById('f-type').value,title:document.getElementById('f-title').value,posFindings:document.getElementById('f-pos').value,negFindings:document.getElementById('f-neg').value,status:'Open',gearLink:document.getElementById('f-gear').value};
   audits.push(audit);
   draftFindings.forEach((f,i)=>{
-    findings.push({id:`F${Date.now()}${i}`,auditId:id,seq:f.seq,description:f.description,classification:f.classification,category:f.category,owner:f.owner,dueDate:f.dueDate,status:f.status,closureDate:''});
+    findings.push({id:`F${Date.now()}${i}`,auditId:id,seq:f.seq,description:f.description,classification:f.classification,category:f.category,owner:f.owner,dueDate:f.dueDate,status:f.status,closureDate:'',gearLink:f.gearLink||''});
   });
   showTab('tracker');
 }
 
+// ── YEAR vs YEAR ──────────────────────────────────────────────────────────────
+let selectedYears=[];
+function renderYoY(){
+  const el=document.getElementById('view-yoy');
+  const years=allYears();
+  if(!selectedYears.length&&years.length)selectedYears=[years[years.length-1]];
+  el.innerHTML=`
+  <div class="section-head"><div class="section-title">Year vs Year comparison</div></div>
+  <div class="year-bar">
+    <label>Select years:</label>
+    ${years.map(y=>`<button class="year-btn ${selectedYears.includes(y)?'active':''}" onclick="toggleYear(${y})">${y}</button>`).join('')}
+    <span style="margin-left:auto;font-size:12px;color:#6b6b67">Select multiple years to compare</span>
+  </div>
+  <div id="yoy-content"></div>`;
+  renderYoYCharts();
+}
+
+function toggleYear(y){
+  if(selectedYears.includes(y))selectedYears=selectedYears.filter(x=>x!==y);
+  else selectedYears.push(y);
+  selectedYears.sort();
+  renderYoY();
+}
+
+function renderYoYCharts(){
+  const el=document.getElementById('yoy-content');
+  if(!el)return;
+  if(!selectedYears.length){el.innerHTML=`<div class="empty-state">Select at least one year above to view data.</div>`;return;}
+
+  const colors=['#1D9E75','#378ADD','#EF9F27','#D85A30','#534AB7','#E24B4A'];
+  const cats=['NC','Critical','Major','Minor','Strength'];
+
+  // Build per-year stats
+  const yearStats=selectedYears.map(y=>{
+    const yFindings=findings.filter(f=>{const a=audits.find(x=>x.id===f.auditId);return a&&getYear(a.date)===y;});
+    const yAudits=audits.filter(a=>getYear(a.date)===y);
+    return{y,total:yFindings.length,audits:yAudits.length,open:yFindings.filter(f=>f.status==='Open').length,overdue:yFindings.filter(f=>f.status==='Overdue').length,closed:yFindings.filter(f=>f.status==='Closed').length,nc:yFindings.filter(f=>f.classification==='NC').length,critical:yFindings.filter(f=>f.classification==='Critical').length,major:yFindings.filter(f=>f.classification==='Major').length,minor:yFindings.filter(f=>f.classification==='Minor').length,strength:yFindings.filter(f=>f.classification==='Strength').length,closureRate:yFindings.length?Math.round(yFindings.filter(f=>f.status==='Closed').length/yFindings.length*100):0};
+  });
+
+  el.innerHTML=`
+  <div class="grid-${Math.min(selectedYears.length,4)}" style="margin-bottom:16px">
+    ${yearStats.map((s,i)=>`
+    <div class="card" style="border-top:3px solid ${colors[i%colors.length]}">
+      <div style="font-size:18px;font-weight:700;color:${colors[i%colors.length]};margin-bottom:12px">${s.y}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px">
+        <div><div style="color:#6b6b67;font-size:11px;font-weight:700;text-transform:uppercase">Total findings</div><div style="font-size:20px;font-weight:700">${s.total}</div></div>
+        <div><div style="color:#6b6b67;font-size:11px;font-weight:700;text-transform:uppercase">Audits</div><div style="font-size:20px;font-weight:700">${s.audits}</div></div>
+        <div><div style="color:#6b6b67;font-size:11px;font-weight:700;text-transform:uppercase">NC+Critical</div><div style="font-size:20px;font-weight:700;color:#A32D2D">${s.nc+s.critical}</div></div>
+        <div><div style="color:#6b6b67;font-size:11px;font-weight:700;text-transform:uppercase">Closure rate</div><div style="font-size:20px;font-weight:700;color:#3B6D11">${s.closureRate}%</div></div>
+        <div><div style="color:#6b6b67;font-size:11px;font-weight:700;text-transform:uppercase">Overdue</div><div style="font-size:20px;font-weight:700;color:#854F0B">${s.overdue}</div></div>
+        <div><div style="color:#6b6b67;font-size:11px;font-weight:700;text-transform:uppercase">Strengths</div><div style="font-size:20px;font-weight:700;color:#3B6D11">${s.strength}</div></div>
+      </div>
+    </div>`).join('')}
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div style="font-size:13px;font-weight:700;margin-bottom:12px">Findings by classification — year comparison</div>
+      <div class="chart-wrap"><canvas id="yoyClassChart"></canvas></div>
+    </div>
+    <div class="card">
+      <div style="font-size:13px;font-weight:700;margin-bottom:12px">Closure rate % — year comparison</div>
+      <div class="chart-wrap"><canvas id="yoyRateChart"></canvas></div>
+    </div>
+  </div>`;
+
+  setTimeout(()=>{
+    if(charts.yoyClassChart)charts.yoyClassChart.destroy();
+    if(charts.yoyRateChart)charts.yoyRateChart.destroy();
+
+    charts.yoyClassChart=new Chart(document.getElementById('yoyClassChart'),{
+      type:'bar',
+      data:{
+        labels:cats,
+        datasets:yearStats.map((s,i)=>({label:String(s.y),data:[s.nc,s.critical,s.major,s.minor,s.strength],backgroundColor:colors[i%colors.length],borderRadius:4}))
+      },
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'}},scales:{y:{beginAtZero:true,ticks:{stepSize:1},grid:{color:'rgba(0,0,0,0.04)'}},x:{grid:{display:false}}}}
+    });
+
+    charts.yoyRateChart=new Chart(document.getElementById('yoyRateChart'),{
+      type:'bar',
+      data:{
+        labels:yearStats.map(s=>String(s.y)),
+        datasets:[{label:'Closure Rate %',data:yearStats.map(s=>s.closureRate),backgroundColor:yearStats.map((_,i)=>colors[i%colors.length]),borderRadius:6}]
+      },
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:100,ticks:{callback:v=>v+'%'},grid:{color:'rgba(0,0,0,0.04)'}},x:{grid:{display:false}}}}
+    });
+  },150);
+}
+
+// ── SETTINGS ──────────────────────────────────────────────────────────────────
 function renderSettings(){
   const el=document.getElementById('view-settings');
   el.innerHTML=`
-  <div class="section-head"><div class="section-title">Settings — master lists</div><div style="font-size:12px;color:#6b6b67">Add or remove values used in all dropdowns across the system</div></div>
+  <div class="section-head">
+    <div class="section-title"><i class="ti ti-settings" style="color:#1D9E75"></i> Settings — master lists</div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="font-size:12px;color:#3B6D11;background:#EAF3DE;padding:4px 10px;border-radius:8px;font-weight:600"><i class="ti ti-lock-open"></i> Unlocked</span>
+      <button class="btn btn-sm" onclick="settingsUnlocked=false;showTab('dashboard')"><i class="ti ti-lock"></i> Lock & exit</button>
+    </div>
+  </div>
+  <p style="font-size:12px;color:#6b6b67;margin-bottom:16px">Add or remove values used in all dropdowns across the system. Changes apply immediately.</p>
   <div class="grid-2">
-    ${renderMasterList('Auditor names','auditors')}
+    ${renderMasterList('Auditor / FQC names','auditors')}
     ${renderMasterList('Countries','countries')}
     ${renderMasterList('Locations / fields','locations')}
     ${renderMasterList('Clients','clients')}
@@ -485,7 +754,7 @@ function renderMasterList(label,key){
     <div class="tag-list">${MASTER[key].map((v,i)=>`<span class="tag">${v}<span class="tag-del" onclick="removeTag('${key}',${i})">×</span></span>`).join('')}</div>
     <div class="add-tag-row">
       <input id="inp-${key}" placeholder="Add new value…" onkeydown="if(event.key==='Enter')addTag('${key}')">
-      <button class="btn btn-sm" onclick="addTag('${key}')"><i class="ti ti-plus"></i> Add</button>
+      <button class="btn btn-sm btn-primary" onclick="addTag('${key}')"><i class="ti ti-plus"></i> Add</button>
     </div>
   </div>`;
 }
@@ -500,8 +769,43 @@ function addTag(key){
 }
 
 function removeTag(key,i){
+  if(!confirm(`Remove "${MASTER[key][i]}" from ${key}?`))return;
   MASTER[key].splice(i,1);
   renderSettings();
+}
+
+// ── EXPORT ────────────────────────────────────────────────────────────────────
+function buildExportRows(){
+  const rows=[['Finding ID','Report ID','Audit Date','Auditor','Country','Region','Audit Type','Classification','Category','Description','Owner','Due Date','Status','Closure Date','GEAR Link']];
+  findings.forEach(f=>{
+    const a=audits.find(x=>x.id===f.auditId)||{};
+    rows.push([f.id,f.auditId,a.date||'',a.auditor||'',a.country||'',getRegion(a.country||''),a.type||'',f.classification,f.category,f.description,f.owner,f.dueDate,f.status,f.closureDate,f.gearLink||'']);
+  });
+  return rows;
+}
+
+function exportCSV(){
+  const rows=buildExportRows();
+  const csv=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download=`FQC_Audit_Findings_${new Date().toISOString().split('T')[0]}.csv`;
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+}
+
+function exportExcel(){
+  const rows=buildExportRows();
+  let html='<table border="1"><thead><tr>'+rows[0].map(h=>`<th style="background:#1D9E75;color:white;font-weight:bold">${h}</th>`).join('')+'</tr></thead><tbody>';
+  rows.slice(1).forEach((r,i)=>{
+    html+=`<tr style="background:${i%2===0?'#ffffff':'#f9f9f6'}">`+r.map(v=>`<td>${v}</td>`).join('')+'</tr>';
+  });
+  html+='</tbody></table>';
+  const blob=new Blob([`<html><head><meta charset="utf-8"></head><body>${html}</body></html>`],{type:'application/vnd.ms-excel;charset=utf-8;'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download=`FQC_Audit_Findings_${new Date().toISOString().split('T')[0]}.xls`;
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
 }
 
 showTab('dashboard');
